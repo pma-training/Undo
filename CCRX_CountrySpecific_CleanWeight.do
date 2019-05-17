@@ -70,19 +70,19 @@ local x=r(nvars)
 foreach var in electricity radio tv mobile landline refrigerator cable_tv ///
 electric_gen ac computer elec_iron fan watch bicycle motorcycle animalcart ///
 car canoe boatmotor {
-gen `var'=0 if assets!="" & assets!="-99"
-forval y=1/`x' {
-replace `var'=1 if assets_`y'=="`var'"
-}
-}
+	gen `var'=0 if assets!="" & assets!="-99"
+	forval y=1/`x' {
+		replace `var'=1 if assets_`y'=="`var'"
+		}
+	}
 drop assets_*
 
 *Livestock
 foreach x in cows_bulls horses goats sheep chickens pigs {
-capture rename owned_`x'* `x'_owned
-capture label var `x'_owned 			"Total number of `x' owned"
-destring `x'_owned, replace
-}
+	capture rename owned_`x'* `x'_owned
+	capture label var `x'_owned 			"Total number of `x' owned"
+	destring `x'_owned, replace
+	}
 
 *Roof/Wall/Floor
 **Numeric codes come from country specific DHS questionnaire 
@@ -152,16 +152,16 @@ label define methods_list 1 female_sterilization 2 male_sterilization 3 implants
 *Drop variables not included in country
 *In variable list on the foreach line, include any variables NOT asked about in country
 foreach var of varlist injectables3 injectables1 N_tablet {
-sum `var'
-if r(min)==0 & r(max)==0 {
-drop `var'
-}
-}
+	sum `var'
+	if r(min)==0 & r(max)==0 {
+		drop `var'
+		}
+	}
 
 capture confirm var sayana_press 
 if _rc==0 {
-replace sayana_press=1 if regexm(current_method, "sayana_press") & FRS_result==1
-}
+	replace sayana_press=1 if regexm(current_method, "sayana_press") & FRS_result==1
+	}
 
 
 *Source of contraceptive supplies 
