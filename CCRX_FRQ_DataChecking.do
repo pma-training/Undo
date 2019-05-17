@@ -275,7 +275,6 @@ label var pp_method_value						"Value in days, months or years"
 label var pp_method_yn							"Used something to avoid/delay pregnancy post most recent birth"
 label var pp_method								"Method used post most recent birth"
 
-label var	fp_ad_radio			"Heard about FP on radio"
 label var	fp_ad_tv				"Heard about FP on television"
 label var	fp_ad_magazine			"Read about FP in newspaper/magazine"
 label var   fp_ad_call              "Receive FP in voice or text message"
