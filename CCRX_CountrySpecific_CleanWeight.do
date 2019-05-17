@@ -53,8 +53,8 @@ replace doi=manual_date if manual_date!="." & manual_date!=""
 
 split doi, gen(doisplit_)
 capture drop wrongdate
-gen wrongdate=1 if doisplit_3!="2018"
-replace wrongdate=1 if doisplit_1!="Apr" & doisplit_1!="May" & doisplit_1!="Jun" & doisplit_1!=""
+gen wrongdate=1 if doisplit_3!="2019"
+replace wrongdate=1 if doisplit_1!="Oct" & doisplit_1!="Nov" & doisplit_1!="Dec" & doisplit_1!=""
 *If survey spans across 2 years
 /*replace wrongdate=1 if doisplit_3!="2018"
 replace wrongdate=1 if doisplit_1!="Jan" & doisplit_1!=""
@@ -110,8 +110,8 @@ label var survey_languagev2 "Language of household interview"
 **Country specific female questionnaire changes
 *Year and month of data collection.  
 
-gen FQwrongdate=1 if thisyear!=2018 & thisyear!=.
-replace FQwrongdate=1 if thismonth!=4 & thismonth!=5 & thismonth!=6 & thismonth!=. 
+gen FQwrongdate=1 if thisyear!=2019 & thisyear!=.
+replace FQwrongdate=1 if thismonth!=10 & thismonth!=11 & thismonth!=12 & thismonth!=. 
 *If survey spans across 2 years
 /*replace FQwrongdate=1 if thisyear!=2018 & thisyear!=.
 replace FQwrongdate=1 if thismonth!=1 & thismonth!=. 
