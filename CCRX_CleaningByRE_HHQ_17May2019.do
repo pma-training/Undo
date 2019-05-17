@@ -12,7 +12,7 @@
 
 **Examples
 
-*drop if metainstanceID=="uuid:3dd03052-4073-454b-9bee-26179f35047a"
+drop if metainstanceID=="uuid:3dd03052-4073-454b-9bee-26179f35047a"
 *replace household=household+1000 if metainstanceID=="uuid:f10aad48-7ca4-4da3-9ddf-54718bba9fb4"
 *replace FRS_form_name="" if metainstanceID=="uuid:a6a4e656-ecff-4fbd-b239-cf3a9ebf41eb"  & FRS_form_name=="FR:new_town-5-2-Alberta-23"
 
